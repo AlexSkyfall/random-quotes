@@ -1,0 +1,109 @@
+/* Основной стиль документа */
+body {
+  font-family: "Cinzel", serif; /* Готический шрифт для атмосферы */
+  background-color: #0d1117; /* Тёмный фон в стиле Gotham */
+  color: #c9d1d9; /* Светло-серый текст для контраста */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Обёртка фонового изображения */
+.background-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Само изображение */
+.background-image {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 1920px; /* Ограничение масштаба */
+  object-fit: cover; /* Масштабируем с сохранением пропорций */
+  object-position: center top; /* Центрируем по горизонтали, прижимаем к верху */
+  filter: brightness(0.6); /* Тёмный фильтр */
+  transition: all 0.3s ease;
+}
+
+/* Контейнер приложения */
+#app {
+  text-align: center;
+  background: #161b22; /* Тёмно-серый фон контейнера */
+  padding: 30px 40px;
+  border: 2px solid #58a6ff; /* Ярко-синий акцент */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.5); /* Синее свечение */
+  max-width: 500px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Заголовок */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #58a6ff; /* Ярко-синий текст */
+  text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff; /* Эффект свечения текста */
+  text-transform: uppercase; /* Заглавные буквы */
+}
+
+/* Цитата */
+#quote-container {
+  margin: 20px 0;
+  padding: 20px;
+  background: #21262d; /* Ещё более тёмный фон для цитаты */
+  border: 1px solid #30363d; /* Тонкая рамка */
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8); /* Внутреннее свечение */
+}
+
+#quote {
+  font-size: 20px;
+  font-style: italic;
+  color: #c9d1d9; /* Светло-серый текст */
+  text-shadow: 0 0 5px #58a6ff; /* Лёгкое синее свечение текста */
+  line-height: 1.6;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Кнопка */
+button#generate-quote {
+  background-color: #21262d; /* Тёмный фон кнопки */
+  color: #58a6ff; /* Ярко-синий текст */
+  border: 2px solid #58a6ff; /* Синяя рамка */
+  padding: 12px 25px;
+  font-size: 18px;
+  font-family: "Cinzel", serif;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase; /* Заглавные буквы */
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.5); /* Лёгкое синее свечение */
+}
+
+button#generate-quote:hover {
+  background-color: #58a6ff; /* Синий фон при наведении */
+  color: #0d1117; /* Тёмный текст */
+  box-shadow: 0 0 20px rgba(88, 166, 255, 1); /* Усиленное свечение */
+  transform: scale(1.1); /* Лёгкое увеличение кнопки */
+}
+
+/* Анимация появления цитаты */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
