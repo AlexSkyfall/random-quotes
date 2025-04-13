@@ -64,6 +64,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   button.addEventListener("click", generateQuote);
 
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  themeToggle.addEventListener("click", () => {
+    if (body.classList.contains("dark-theme")) {
+      body.classList.replace("dark-theme", "light-theme");
+      themeToggle.textContent = "🌙";
+    } else {
+      body.classList.replace("light-theme", "dark-theme");
+      themeToggle.textContent = "☀️";
+    }
+  });
+
+  // Установите начальную тему
+  if (
+    !body.classList.contains("dark-theme") &&
+    !body.classList.contains("light-theme")
+  ) {
+    body.classList.add("dark-theme"); // Начальная тема — тёмная
+  }
+
   // Экспорт переменных в глобальную область видимости
   window.quotes = quotes;
   window.generateQuote = generateQuote;

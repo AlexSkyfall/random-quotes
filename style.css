@@ -107,3 +107,57 @@ button#generate-quote:hover {
     transform: translateY(0);
   }
 }
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+body.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-theme #app {
+  background: #f0f0f0; /* Светлый фон контейнера */
+  border-color: #000000; /* Чёрная рамка */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тёмное свечение */
+}
+
+body.light-theme h1 {
+  color: #000000; /* Чёрный текст */
+  text-shadow: none; /* Убираем свечение */
+}
+
+body.light-theme #quote-container {
+  background: #e0e0e0; /* Светлый фон для цитаты */
+  border-color: #c0c0c0; /* Светлая рамка */
+}
+
+body.light-theme #quote {
+  color: #000000; /* Чёрный текст */
+  text-shadow: none; /* Убираем свечение */
+}
+
+body.light-theme button#generate-quote {
+  background-color: #f0f0f0; /* Светлый фон кнопки */
+  color: #000000; /* Чёрный текст */
+  border-color: #000000; /* Чёрная рамка */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тёмное свечение */
+}
+
+body.light-theme button#generate-quote:hover {
+  background-color: #000000; /* Чёрный фон при наведении */
+  color: #ffffff; /* Белый текст */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1); /* Усиленное свечение */
+}
+
+body.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
